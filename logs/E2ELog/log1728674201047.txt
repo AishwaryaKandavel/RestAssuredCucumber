@@ -1,0 +1,280 @@
+Request method:	GET
+Request URI:	https://aishwaryakandavel.atlassian.net/rest/api/3/issue/10086
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	issueId=10086
+Headers:		Authorization=Basic YWlzaHdhcnlhLmthbmRhdmVsQGdtYWlsLmNvbTpBVEFUVDN4RmZHRjAzV05BaU5BMlo0RDVzek8wdnZlS29PeklQRXFLeW91OXF4UU5xS2RkZ1JkZVQ3S3VidV9iVFdmZ2V4TXAtS3B5Y2c0NU1qZmUzNVFMTlpyckZVTFplSG5ic0ItRTg3anVGbDIwdmxINFBmVHdOZ2t2UHotV2lPcHFsWU5aNVNjUUxOeklrWE5zM2pFMERvLV9ZcDc3YnptTmhTVXNzdTBub0F1MkZjdmszaW89RUFGMEJGREQ=
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Fri, 11 Oct 2024 19:16:41 GMT
+Content-Type: application/json;charset=UTF-8
+Server: AtlassianEdge
+Timing-Allow-Origin: *
+X-Arequestid: 6a9317b094fb097283123db1848babe0
+Set-Cookie: atlassian.xsrf.token=e82a4baa706a2cb9171ebd84c49e9be23d98b318_lin; Path=/; SameSite=None; Secure
+X-Aaccountid: 63c1c52bdf0fa548e8e9715c
+Cache-Control: no-cache, no-store, no-transform
+Vary: Accept-Encoding
+Content-Encoding: gzip
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Atl-Traceid: feb311a0fecc468197f2460166f6d400
+Atl-Request-Id: feb311a0-fecc-4681-97f2-460166f6d400
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+Report-To: {"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}
+Nel: {"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}
+Server-Timing: atl-edge;dur=396,atl-edge-internal;dur=13,atl-edge-upstream;dur=384,atl-edge-pop;desc="aws-ap-south-1"
+Transfer-Encoding: chunked
+
+{
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10010.requestTypePractice",
+    "id": "10086",
+    "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/issue/10086",
+    "key": "SCRUM-87",
+    "fields": {
+        "statuscategorychangedate": "2024-10-12T00:46:38.242+0530",
+        "issuetype": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/issuetype/10002",
+            "id": "10002",
+            "description": "A problem or error.",
+            "iconUrl": "https://aishwaryakandavel.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+            "name": "Bug",
+            "subtask": false,
+            "avatarId": 10303,
+            "entityId": "acb0e838-5bea-4f1c-8fcc-eeac36e6aa51",
+            "hierarchyLevel": 0
+        },
+        "timespent": null,
+        "project": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/project/10000",
+            "id": "10000",
+            "key": "SCRUM",
+            "name": "Personal",
+            "projectTypeKey": "software",
+            "simplified": true,
+            "avatarUrls": {
+                "48x48": "https://aishwaryakandavel.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10417",
+                "24x24": "https://aishwaryakandavel.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10417?size=small",
+                "16x16": "https://aishwaryakandavel.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10417?size=xsmall",
+                "32x32": "https://aishwaryakandavel.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10417?size=medium"
+            }
+        },
+        "fixVersions": [
+            
+        ],
+        "customfield_10033": null,
+        "customfield_10034": null,
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10035": null,
+        "customfield_10027": null,
+        "customfield_10028": null,
+        "customfield_10029": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "issuerestriction": {
+            "issuerestrictions": {
+                
+            },
+            "shouldDisplay": true
+        },
+        "watches": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/issue/SCRUM-87/watchers",
+            "watchCount": 1,
+            "isWatching": true
+        },
+        "lastViewed": null,
+        "created": "2024-10-12T00:46:37.924+0530",
+        "customfield_10020": null,
+        "customfield_10021": null,
+        "customfield_10022": null,
+        "priority": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://aishwaryakandavel.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+        },
+        "customfield_10023": null,
+        "customfield_10024": null,
+        "customfield_10025": null,
+        "labels": [
+            
+        ],
+        "customfield_10026": null,
+        "customfield_10016": null,
+        "customfield_10017": null,
+        "customfield_10018": {
+            "hasEpicLinkFieldDependency": false,
+            "showField": false,
+            "nonEditableReason": {
+                "reason": "EPIC_LINK_SHOULD_BE_USED",
+                "message": "To set an epic as the parent, use the epic link instead"
+            }
+        },
+        "customfield_10019": "0|i000b3:",
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [
+            
+        ],
+        "issuelinks": [
+            
+        ],
+        "assignee": null,
+        "updated": "2024-10-12T00:46:40.631+0530",
+        "status": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/status/10000",
+            "description": "",
+            "iconUrl": "https://aishwaryakandavel.atlassian.net/",
+            "name": "To Do",
+            "id": "10000",
+            "statusCategory": {
+                "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/statuscategory/2",
+                "id": 2,
+                "key": "new",
+                "colorName": "blue-gray",
+                "name": "To Do"
+            }
+        },
+        "components": [
+            
+        ],
+        "timeoriginalestimate": null,
+        "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Given: I have added products to the cart. When: I navigate to the checkout page. Then: Expected: The total price should be calculated correctly. Actual: The total price is higher than the actual price of products in the cart"
+                        }
+                    ]
+                }
+            ]
+        },
+        "customfield_10010": null,
+        "customfield_10014": null,
+        "customfield_10015": null,
+        "timetracking": {
+            
+        },
+        "customfield_10005": null,
+        "customfield_10006": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/customFieldOption/10007",
+            "value": "Critical",
+            "id": "10007"
+        },
+        "security": null,
+        "customfield_10007": null,
+        "customfield_10008": null,
+        "customfield_10009": null,
+        "attachment": [
+            {
+                "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/attachment/10047",
+                "id": "10047",
+                "filename": "incorrectTotal.png",
+                "author": {
+                    "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/user?accountId=63c1c52bdf0fa548e8e9715c",
+                    "accountId": "63c1c52bdf0fa548e8e9715c",
+                    "emailAddress": "aishwarya.kandavel@gmail.com",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                        "24x24": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                        "16x16": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                        "32x32": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png"
+                    },
+                    "displayName": "Aishwarya Kandavel",
+                    "active": true,
+                    "timeZone": "Asia/Calcutta",
+                    "accountType": "atlassian"
+                },
+                "created": "2024-10-12T00:46:40.115+0530",
+                "size": 258021,
+                "mimeType": "image/png",
+                "content": "https://aishwaryakandavel.atlassian.net/rest/api/3/attachment/content/10047",
+                "thumbnail": "https://aishwaryakandavel.atlassian.net/rest/api/3/attachment/thumbnail/10047"
+            }
+        ],
+        "aggregatetimeestimate": null,
+        "summary": "Incorrect total price calculation on the checkout page",
+        "creator": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/user?accountId=63c1c52bdf0fa548e8e9715c",
+            "accountId": "63c1c52bdf0fa548e8e9715c",
+            "emailAddress": "aishwarya.kandavel@gmail.com",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                "24x24": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                "16x16": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                "32x32": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png"
+            },
+            "displayName": "Aishwarya Kandavel",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+        },
+        "subtasks": [
+            
+        ],
+        "reporter": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/user?accountId=63c1c52bdf0fa548e8e9715c",
+            "accountId": "63c1c52bdf0fa548e8e9715c",
+            "emailAddress": "aishwarya.kandavel@gmail.com",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                "24x24": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                "16x16": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png",
+                "32x32": "https://secure.gravatar.com/avatar/cb00e6ec5855e5aaad32edd892c81369?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-1.png"
+            },
+            "displayName": "Aishwarya Kandavel",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+        },
+        "aggregateprogress": {
+            "progress": 0,
+            "total": 0
+        },
+        "customfield_10001": null,
+        "customfield_10002": [
+            
+        ],
+        "customfield_10003": null,
+        "customfield_10004": null,
+        "environment": null,
+        "duedate": null,
+        "progress": {
+            "progress": 0,
+            "total": 0
+        },
+        "votes": {
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/issue/SCRUM-87/votes",
+            "votes": 0,
+            "hasVoted": false
+        },
+        "comment": {
+            "comments": [
+                
+            ],
+            "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/issue/10086/comment",
+            "maxResults": 0,
+            "total": 0,
+            "startAt": 0
+        },
+        "worklog": {
+            "startAt": 0,
+            "maxResults": 20,
+            "total": 0,
+            "worklogs": [
+                
+            ]
+        }
+    }
+}

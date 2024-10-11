@@ -1,0 +1,30 @@
+Request method:	DELETE
+Request URI:	https://aishwaryakandavel.atlassian.net/rest/api/3/issue/10086
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	issueId=10086
+Headers:		Authorization=Basic YWlzaHdhcnlhLmthbmRhdmVsQGdtYWlsLmNvbTpBVEFUVDN4RmZHRjAzV05BaU5BMlo0RDVzek8wdnZlS29PeklQRXFLeW91OXF4UU5xS2RkZ1JkZVQ3S3VidV9iVFdmZ2V4TXAtS3B5Y2c0NU1qZmUzNVFMTlpyckZVTFplSG5ic0ItRTg3anVGbDIwdmxINFBmVHdOZ2t2UHotV2lPcHFsWU5aNVNjUUxOeklrWE5zM2pFMERvLV9ZcDc3YnptTmhTVXNzdTBub0F1MkZjdmszaW89RUFGMEJGREQ=
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 204 No Content
+Date: Fri, 11 Oct 2024 19:16:43 GMT
+Content-Type: application/json;charset=UTF-8
+Server: AtlassianEdge
+Timing-Allow-Origin: *
+X-Arequestid: 82eac9d60b30367cfa7c48b35695fd87
+Set-Cookie: atlassian.xsrf.token=49d5025c80843d42d5a4f7e95b716895e1d002d8_lin; Path=/; SameSite=None; Secure
+X-Aaccountid: 63c1c52bdf0fa548e8e9715c
+Cache-Control: no-cache, no-store, no-transform
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Atl-Traceid: 1b7ab0d9b65c461a9e0ec99fff2685df
+Atl-Request-Id: 1b7ab0d9-b65c-461a-9e0e-c99fff2685df
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+Report-To: {"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}
+Nel: {"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}
+Server-Timing: atl-edge;dur=587,atl-edge-internal;dur=12,atl-edge-upstream;dur=575,atl-edge-pop;desc="aws-ap-south-1"

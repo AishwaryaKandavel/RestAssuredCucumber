@@ -1,10 +1,6 @@
 package stepDefinitions;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.Map;
 
 import io.cucumber.java.en.*;
 import io.restassured.builder.RequestSpecBuilder;
@@ -16,109 +12,118 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 
 import io.restassured.specification.RequestSpecification;
-import pojo.createJiraIssue.Content1;
-import pojo.createJiraIssue.Content2;
-import pojo.createJiraIssue.CreateIssueJira;
-import pojo.createJiraIssue.Description;
-import pojo.createJiraIssue.Fields;
-import pojo.createJiraIssue.Issuetype;
-import pojo.createJiraIssue.Project;
 import pojo.createJiraIssue.response.CreateIssueJiraRes;
+import resources.APIResources;
+import resources.HeaderUtil;
+import resources.TestDataBuilder;
+import resources.UtilityFunction;
 
-public class Test {
+public class Test extends UtilityFunction{
 	
-	String baseURI = "https://aishwaryakandavel.atlassian.net/";
-	String createIssueResource = "rest/api/3/issue/";
-	String attachmentIssueResource = createIssueResource+"{issueId}/attachments";
-	String getIssueResource = createIssueResource+"{issueId}";
-	String id, key, self = "";
+	static String id, key, self;
 	String currDir = System.getProperty("user.dir");
-	protected static Properties prop = new Properties();
 	RequestSpecification spec;
-	RequestSpecification createOrderReq;
 	CreateIssueJiraRes res;
 	Response resp;
+	TestDataBuilder testDataBuilder = new TestDataBuilder();
+	HeaderUtil headerUtil = new HeaderUtil();
+	RequestSpecBuilder resSpecBuilder;
+	
+	public String getVariable(String variable) throws Exception {
+		return (String) Test.class.getDeclaredField(variable).get(new Test());
+	}
+	
+	public void setVariable(String variable, String value) throws Exception {
+		Test.class.getDeclaredField(variable).set(new Test(), value);
+	}
 	
 	@Given("I add the payload for {string}")
-	public void i_add_the_payload_for(String apiPayload) {
+	public void i_add_the_payload_for(String apiPayload) throws Exception {
 		
-		Project proj = new Project();
-		proj.setKey("SCRUM");
-		
-		Content2 content2 = new Content2();
-		content2.setText(
-				"Given: I have added products to the cart. When: I navigate to the checkout page. "
-				+ "Then: Expected: The total price should be calculated correctly. "
-				+ "Actual: The total price is higher than the actual price of products in the cart");
-		content2.setType("text");
-		List<Content2> listOfContent2 = new ArrayList<Content2>();
-		listOfContent2.add(content2);
-		
-		Content1 content1 = new Content1();
-		content1.setContent(listOfContent2);
-		content1.setType("paragraph");
-		
-		List<Content1> listOfContent1 = new ArrayList<Content1>();
-		listOfContent1.add(content1);
-		
-		Description desc = new Description();
-		desc.setContent(listOfContent1);
-		desc.setType("doc");
-		desc.setVersion(1);
-		
-		Issuetype issuetype = new Issuetype();
-		issuetype.setName("Bug");
-		System.out.println(issuetype.getName());
-		
-		Fields fields = new Fields();
-		fields.setSummary("Incorrect total price calculation on the checkout page");
-		
-		fields.setDescription(desc);
-		fields.setIssuetype(issuetype);
-		fields.setProject(proj);
-		
-		CreateIssueJira createIssueJira = new CreateIssueJira();
-		createIssueJira.setFields(fields);
-		System.out.println(createIssueJira.getFields().getIssuetype().getName());
-		
-		try {
-			FileInputStream fis = new FileInputStream(
-					new File(System.getProperty("user.dir") + "/src/main/resources/runConfig.properties"));
-			prop.load(fis);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		spec =	new RequestSpecBuilder().setBaseUri("https://aishwaryakandavel.atlassian.net/")
-				.addHeader("Authorization", prop.getProperty("token"))
-				.setContentType(ContentType.JSON)
-				.build();
-		
-		createOrderReq=given().log().all().spec(spec).body(createIssueJira);
+		spec =	requestSpecification().setContentType(ContentType.JSON).build();
+		spec = given().log().all().spec(spec)
+				.body(getMethod(testDataBuilder, apiPayload).invoke(testDataBuilder));
 	}
 
 	@When("I call {string} with {string} http request")
-	public void i_call_with_post_http_request(String api, String method) {
-		resp = createOrderReq.when().log().all().post(createIssueResource).then().extract().response();
+	public void i_call_with_post_http_request(String api, String method) throws Exception {
+		String val = APIResources.valueOf(api).getResource();
+		switch (method) {
+		case "POST":
+			resp = spec.when().log().all().post(val);
+			break;
+		case "GET":
+			resp = spec.when().log().all().get(val);
+			break;
+		case "PUT":
+			resp = spec.when().log().all().put(val);
+			break;
+		case "DELETE":
+			resp = spec.when().log().all().delete(val);
+			break;
+		default:
+			break;
+		}
 	}
 
-	@Then("verify API call got success with staus code {int}")
-	public void verify_api_call_got_success_with_status_code(int statusCode) {
+	@Then("I verify API call got success with staus code {int}")
+	public void i_verify_api_call_got_success_with_status_code(int statusCode) {
 		assertEquals(resp.getStatusCode(), statusCode);
 	}
 	
-	@Then("verify API response schema with JSON scehma {string}")
-	public void verify_api_call_got_success_with_status_code(String schema) {
+	@Then("I verify API response schema with JSON scehma {string}")
+	public void i_verify_api_response_schema_with_json_schema(String schema) {
 		resp.then().assertThat()
-			.body(JsonSchemaValidator.matchesJsonSchemaInClasspath("CreateIssue.json"));
+			.body(JsonSchemaValidator.matchesJsonSchemaInClasspath(schema+".json"));
 	}
 
-	@Then("capture the API response values for {string}")
-	public void capture_the_api_response_values_for(String string) {
+	@Then("I capture the API response values for {string}")
+	public void i_capture_the_api_response_values_for(String values) throws Exception {
 		res = resp.then().extract().as(pojo.createJiraIssue.response.CreateIssueJiraRes.class);
-		this.id = res.getId();
-		this.key = res.getKey();
-		this.self = res.getSelf();
+		String[] vals = values.split(";");
+		for (String val : vals) {
+			String value = (String) getMethod(res, 
+					"get"+val.substring(0,1).toUpperCase()+val.substring(1)).invoke(res);
+			setVariable(val, value);
+		}
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	@Given("I set headers for {string}")
+	public void i_set_headers_for(String method) throws Exception {
+		resSpecBuilder = resSpecBuilder!=null?resSpecBuilder:requestSpecification();
+		resSpecBuilder = requestSpecification()
+		.addHeaders((Map<String, String>) getMethod(headerUtil, method).invoke(headerUtil));
+	}
+	
+	@Given("I set {string} path parameter with {string}")
+	public void i_set_path_parameter(String param, String value) throws Exception {
+		resSpecBuilder = resSpecBuilder!=null?resSpecBuilder:requestSpecification();
+		String val = getVariable(value);
+		resSpecBuilder = resSpecBuilder.addPathParam(param, val);
+	}
+	
+	@Given("I set file value for {string}")
+	public void i_set_file_value_for(String filePropertyName) throws Exception {
+		resSpecBuilder = resSpecBuilder!=null?resSpecBuilder:requestSpecification();
+		resSpecBuilder = addFileToForm(resSpecBuilder, filePropertyName);
+	}
+	
+	@Then("I verify {string} value")
+	public void i_verify_value(String value) throws Exception {
+		String val = getVariable(value);
+		assertEquals(getValueFromResponse(resp, value), val);
+	}
+	@Given("I set content-type as {string}")
+	public void i_set_content_type_as(String contentType) throws Exception {
+		resSpecBuilder = resSpecBuilder!=null?resSpecBuilder:requestSpecification();
+		resSpecBuilder.setContentType(ContentType.valueOf(contentType));
+	}
+	
+	@Given("I build the request")
+	public void i_build_the_request() throws Exception {
+		resSpecBuilder = resSpecBuilder!=null?resSpecBuilder:requestSpecification();
+		spec = resSpecBuilder.build();
+		spec = given().log().all().spec(spec);
+	}
 }

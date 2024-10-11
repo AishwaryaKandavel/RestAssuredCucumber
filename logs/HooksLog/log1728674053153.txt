@@ -1,0 +1,64 @@
+Request method:	POST
+Request URI:	https://aishwaryakandavel.atlassian.net/rest/api/3/issue/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Basic YWlzaHdhcnlhLmthbmRhdmVsQGdtYWlsLmNvbTpBVEFUVDN4RmZHRjAzV05BaU5BMlo0RDVzek8wdnZlS29PeklQRXFLeW91OXF4UU5xS2RkZ1JkZVQ3S3VidV9iVFdmZ2V4TXAtS3B5Y2c0NU1qZmUzNVFMTlpyckZVTFplSG5ic0ItRTg3anVGbDIwdmxINFBmVHdOZ2t2UHotV2lPcHFsWU5aNVNjUUxOeklrWE5zM2pFMERvLV9ZcDc3YnptTmhTVXNzdTBub0F1MkZjdmszaW89RUFGMEJGREQ=
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "fields": {
+        "project": {
+            "key": "SCRUM"
+        },
+        "summary": "Incorrect total price calculation on the checkout page",
+        "description": {
+            "content": [
+                {
+                    "content": [
+                        {
+                            "text": "Given: I have added products to the cart. When: I navigate to the checkout page. Then: Expected: The total price should be calculated correctly. Actual: The total price is higher than the actual price of products in the cart",
+                            "type": "text"
+                        }
+                    ],
+                    "type": "paragraph"
+                }
+            ],
+            "type": "doc",
+            "version": 1
+        },
+        "issuetype": {
+            "name": "Bug"
+        }
+    }
+}
+HTTP/1.1 201 Created
+Date: Fri, 11 Oct 2024 19:14:17 GMT
+Content-Type: application/json;charset=UTF-8
+Server: AtlassianEdge
+Timing-Allow-Origin: *
+X-Arequestid: c805d20e22f0cc30ba7c05007243276e
+Set-Cookie: atlassian.xsrf.token=64370dfb91d94f07a5b85b71127c0e1a1c08a886_lin; Path=/; SameSite=None; Secure
+X-Aaccountid: 63c1c52bdf0fa548e8e9715c
+Cache-Control: no-cache, no-store, no-transform
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+Atl-Traceid: f7615607ef0847708006ef93b4f05ffe
+Atl-Request-Id: f7615607-ef08-4770-8006-ef93b4f05ffe
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+Report-To: {"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}
+Nel: {"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}
+Server-Timing: atl-edge;dur=593,atl-edge-internal;dur=13,atl-edge-upstream;dur=581,atl-edge-pop;desc="aws-ap-south-1"
+Transfer-Encoding: chunked
+
+{
+    "id": "10085",
+    "key": "SCRUM-86",
+    "self": "https://aishwaryakandavel.atlassian.net/rest/api/3/issue/10085"
+}
